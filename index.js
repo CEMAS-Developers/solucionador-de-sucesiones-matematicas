@@ -1,13 +1,7 @@
 let a = [1, 5, 9];
-let n = 9;
-console.log(sucesion(a, n));
+let n = 9; //An = 33, S9= 183
 
-function sucesion(a, n) {
-  if (inAscOrder(a)) return An(a, n);
-  else return "NS";
-}
-
-function inAscOrder(arr) {
+let inAscOrder = (arr) => {
   return (
     arr.join("") ===
     arr
@@ -16,9 +10,9 @@ function inAscOrder(arr) {
       })
       .join("")
   );
-}
+};
 
-function An(a, n) {
+let An = (a, n) => {
   if (a[2] - a[1] === a[1] - a[0]) {
     let d = a[2] - a[1];
     let An = a[0] + (n - 1) * d;
@@ -31,4 +25,11 @@ function An(a, n) {
     // n = Math.pow(a[0] * r, n - 1);
     return "No Code.";
   } else return "NS";
-}
+};
+
+let sucesion = (a, n) => {
+  if (inAscOrder(a)) return An(a, n);
+  else return "NS";
+};
+
+console.log(sucesion(a, n));
