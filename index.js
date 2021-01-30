@@ -1,7 +1,10 @@
-let a = [1, 5, 9];
-let n = 9; //An = 33, S9= 183
+// let a = [1, 5, 9];
+// let n = 9; //A9=33; S9=133;
 
-let inAscOrder = (arr) => {
+let a = [4, 12, 36];
+let n = 5;
+
+const inAscOrder = (arr) => {
   return (
     arr.join("") ===
     arr
@@ -12,7 +15,7 @@ let inAscOrder = (arr) => {
   );
 };
 
-let An = (a, n) => {
+const An = (a, n) => {
   if (a[2] - a[1] === a[1] - a[0]) {
     let d = a[2] - a[1];
     let An = a[0] + (n - 1) * d;
@@ -20,14 +23,17 @@ let An = (a, n) => {
     return (
       "A=" + a + "; D=" + d + "; A" + n + "=" + An + "; S" + n + "=" + Sn + ";"
     );
-  } else if (a[2] / a[1] === a[2] / a[1]) {
-    // let r = a[2] / a[1];
-    // n = Math.pow(a[0] * r, n - 1);
-    return "No Code.";
+  } else if (a[2] / a[1] === a[2] / a[1] || a[2] * a[1] === a[2] * a[1]) {
+    let r = a[2] / a[1];
+    let An = a[0] * Math.pow(r, n - 1);
+    let Sn = (An * r - a[0]) / (r - 1);
+    return (
+      "A=" + a + "; R=" + r + "; A" + n + "=" + An + "; S" + n + "=" + Sn + ";"
+    );
   } else return "NS";
 };
 
-let sucesion = (a, n) => {
+const sucesion = (a, n) => {
   if (inAscOrder(a)) return An(a, n);
   else return "NS";
 };
