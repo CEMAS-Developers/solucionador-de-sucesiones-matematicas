@@ -14,7 +14,7 @@ const An = (a, n) => {
     let d = a[2] - a[1];
     let An = a[0] + (n - 1) * d;
     let Sn = (n * (a[0] + An)) / 2;
-    let type = "aritmetica";
+    let type = "Aritmetica";
     let result = {
       A: a,
       D: d,
@@ -27,7 +27,7 @@ const An = (a, n) => {
     let r = a[2] / a[1];
     let An = a[0] * Math.pow(r, n - 1);
     let Sn = (An * r - a[0]) / (r - 1);
-    let type = "geometrica";
+    let type = "Geometrica";
     let result = {
       A: a,
       R: r,
@@ -36,13 +36,13 @@ const An = (a, n) => {
       Sn: sn,
     };
     return result;
-  } else return "NS";
+  } else return;
 };
 
-function sucesion(a, n) {
+const sucesion = (a, n) => {
   if (inAscOrder(a)) return An(a, n);
-  else return "NS";
-}
+  else return;
+};
 
 function resolver() {
   let a1 = parseFloat(document.getElementById("a1").value);
@@ -50,5 +50,25 @@ function resolver() {
   let a3 = parseFloat(document.getElementById("a3").value);
   let n = parseFloat(document.getElementById("n").value);
   let a = [a1, a2, a3];
-  console.log(sucesion(a, n));
+  let type = sucesion(a, n).Type;
+  let an = sucesion(a, n).An;
+  let sn = sucesion(a, n).Sn;
+  let d = sucesion(a, n).D;
+  let r = sucesion(a, n).R;
+  let text = "";
+
+  if (type == "Aritmetica") {
+    r = d;
+    text = "D:";
+  } else if (type == "Geometrica") {
+    d = r;
+    text = "R:";
+  }
+
+  document.getElementById("sucesion").innerHTML = a;
+  document.getElementById("text").innerHTML = text;
+  document.getElementById("dr").innerHTML = d;
+  document.getElementById("type").innerHTML = type;
+  document.getElementById("an").innerHTML = an;
+  document.getElementById("sn").innerHTML = sn;
 }
