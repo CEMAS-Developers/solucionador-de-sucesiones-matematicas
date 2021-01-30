@@ -16,9 +16,9 @@ let An = (a, n) => {
   if (a[2] - a[1] === a[1] - a[0]) {
     let d = a[2] - a[1];
     let An = a[0] + (n - 1) * d;
-    let Sn = (n * (a[0] + a[n - 1])) / 2;
+    let Sn = (n * (a[0] + An)) / 2;
     return (
-      "A= " + a + ", D= " + d + ", A" + n + "= " + An + ", S" + n + "= " + Sn
+      "A=" + a + "; D=" + d + "; A" + n + "=" + An + "; S" + n + "=" + Sn + ";"
     );
   } else if (a[2] / a[1] === a[2] / a[1]) {
     // let r = a[2] / a[1];
