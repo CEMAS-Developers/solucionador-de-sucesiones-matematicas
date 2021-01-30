@@ -1,8 +1,8 @@
 // let a = [1, 5, 9];
 // let n = 9; //A9=33; S9=133;
 
-let a = [4, 12, 36];
-let n = 5;
+// let a = [4, 12, 36];
+// let n = 5; //A5=324; S5=484;
 
 const inAscOrder = (arr) => {
   return (
@@ -38,4 +38,4 @@ const sucesion = (a, n) => {
   else return "NS";
 };
 
-console.log(sucesion(a, n));
+// console.log(sucesion(a, n));
