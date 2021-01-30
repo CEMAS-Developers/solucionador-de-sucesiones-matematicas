@@ -39,16 +39,16 @@ const An = (a, n) => {
   } else return "NS";
 };
 
-const sucesion = (a, n) => {
+function sucesion(a, n) {
   if (inAscOrder(a)) return An(a, n);
   else return "NS";
-};
+}
 
-const resolver = () => {
+function resolver() {
   let a1 = parseFloat(document.getElementById("a1").value);
   let a2 = parseFloat(document.getElementById("a2").value);
   let a3 = parseFloat(document.getElementById("a3").value);
   let n = parseFloat(document.getElementById("n").value);
   let a = [a1, a2, a3];
   console.log(sucesion(a, n));
-};
+}
