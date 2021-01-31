@@ -3,53 +3,66 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Solucionador de Sucesiones by Adonys</title>
+	<title>Solucionador de Sucesiones</title>
+	<link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<div class="contenedor">
 		<h1>Solucionador de sucesiones</h1>
-		<p>Esta app solo funciona con números reales y decimales. <span>Ej: 0.5, 10</span></p>
+		<p class="sub-title">Esta app solo funciona con números reales y decimales. <span>Ej: 0.5, 10</span></p>
 		<hr/>
-		<div class="contenedor-left">
-			<form action="">
-				<p>Valor de A1:</p>
-				<input type="text" name="a1" id="a1" value="2">
-
-				<p>Valor de A2:</p>
-				<input type="text" name="a2" id="a2" value="4">
-
-				<p>Valor de A3:</p>
-				<input type="text" name="a3" id="a3" value="6">
-
-				<p>Valor de N:</p>
-				<input type="text" name="a3" id="n" value="4">
-
-				<input type="button" onclick=resolver() value="Resolver">
-			</form>
+		<div class="boxes">
+			<div class="contenedor-left">
+				<form >
+					<h2>Valores: </h2>
+					<div>
+						<p>Valor de A1:</p>
+						<input type="text" name="a1" id="a1" value="2">
+					</div>
+					<div>
+						<p>Valor de A2:</p>
+						<input type="text" name="a2" id="a2" value="4">
+					</div>
+					<div>
+						<p>Valor de A3:</p>
+						<input type="text" name="a3" id="a3" value="6">
+					</div>
+					<div>
+						<p>Valor de N:</p>
+						<input type="text" name="a3" id="n" value="4">
+					</div>
+					<div>
+						<br />
+						<button type="button" onclick=resolver()>Resolver</button>
+					</div>
+				</form>
+			</div>
+			<div class="contenedor-right">
+				<h2>Resultados:</h2>
+				<p>
+					<span class="result">Sucesión:</span>
+					<div id="sucesion"></div>
+				</p>
+				<p>
+					<span class="result"><div id="text" class="result">D:</div></span>
+					<div id="dr"></div>
+				</p>
+				<p>
+					<span class="result">Tipo:</span>
+					<div id="type"></div>
+				</p>
+				<p>
+					<span class="result">An:</span>
+					<div id="an"></div>
+				</p>
+				<p>
+					<span class="result">Sn:</span>
+					<div id="sn"></div>
+				</p>
+			</div>
 		</div>
-		<div class="contenedor-right">
-			<h2>Valores:</h2>
-			<p>
-				<span class="result">Sucesión:</span>
-				<div id="sucesion"></div>
-			</p>
-			<p>
-				<span class="result"><div id="text"></div></span>
-				<div id="dr"></div>
-			</p>
-			<p>
-				<span class="result">Tipo:</span>
-				<div id="type"></div>
-			</p>
-			<p>
-				<span class="result">A4:</span>
-				<div id="an"></div>
-			</p>
-			<p>
-				<span class="result">S4:</span>
-				<div id="sn"></div>
-			</p>
-		</div>
+		<hr />
 		<footer>
 			<p>Creado por <a href="https://github.com/adonyssantoscemas" target="_blank">Adonys Santos</a>.</p>
 		</footer>
