@@ -33,7 +33,7 @@ const An = (a, n) => {
       R: r,
       Type: type,
       An: An,
-      Sn: sn,
+      Sn: Sn,
     };
     return result;
   } else return;
